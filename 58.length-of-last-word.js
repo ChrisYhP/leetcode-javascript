@@ -34,4 +34,3 @@ var lengthOfLastWord = function(s) {
     var tmp = s.trim().split(" ");
     return tmp[tmp.length-1].length;
 };
-console.log(lengthOfLastWord('""'))

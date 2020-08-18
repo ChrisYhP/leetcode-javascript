@@ -17,11 +17,6 @@
  * @return {number}
  */
 
-function TreeNode(val) {
-  this.val = val;
-  this.left = this.right = null;
-}
-
 var minDepth = function (root) {
   if (!root) return 0;
   var q = [];
@@ -40,7 +35,6 @@ var minDepth = function (root) {
       if (cur.right != null) {
         q.push(cur.right);
       }
-      console.log(q)
     }
     depth++;
   }

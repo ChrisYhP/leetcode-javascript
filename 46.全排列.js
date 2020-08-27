@@ -13,23 +13,24 @@
 var res = [];
 var permute = function (nums) {
   var track = [];
+  function backTrack(nums, track) {
+    if (nums.length === track.length) {
+      res.push(track);
+      return;
+    }
+    for (let i = 0; i < nums.length; i++) {
+      if (track.includes(nums[i])) {
+        continue;
+      }
+      track.push(nums[i]);
+      backTrack(nums, [...track]);
+      track.pop();
+    }
+  }
   backTrack(nums, track);
   return res;
 };
 
-function backTrack(nums, track) {
-  if (nums.length === track.length) {
-    res.push(track);
-    return;
-  }
-  for (let i = 0; i < nums.length; i++) {
-    if (track.includes(nums[i])) {
-      continue;
-    }
-    track.push(nums[i]);
-    backTrack(nums, [...track]);
-    track.pop();
-  }
-}
+
 // @lc code=end
 
